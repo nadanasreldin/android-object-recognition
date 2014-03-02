@@ -1,0 +1,60 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center"
+    android:orientation="horizontal" >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="addObject"
+            android:text="New Object" />
+
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="top"
+            android:padding="5sp" >
+
+            <LinearLayout
+                android:id="@+id/scrollLinearLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_gravity="top" />
+            
+        </ScrollView>
+    </LinearLayout>
+
+    <RelativeLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:opencv="http://schemas.android.com/apk/res-auto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <org.opencv.android.JavaCameraView
+            android:id="@+id/cameraView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            opencv:camera_id="any" />
+
+        <TextView
+            android:id="@+id/detectedObjTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:text="initializing..."
+            android:textColor="#ff0000"
+            android:textSize="36sp" />
+    </RelativeLayout>
+
+</LinearLayout>
